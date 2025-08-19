@@ -19,22 +19,22 @@ const Index = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Icon name="Brain" className="h-8 w-8 text-blue-600 mr-2" />
-                <span className="font-bold text-xl text-slate-800">AI JobHub</span>
+                <span className="font-bold text-xl text-slate-800">AI Кор</span>
               </div>
               <div className="hidden md:ml-8 md:flex md:space-x-8">
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Вакансии</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ҷойҳои кор</a>
                 <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Резюме</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Компании</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Аналитика</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Тесты</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ширкатҳо</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Таҳлил</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Санҷишҳо</a>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <Button variant="outline" size="sm">
-                Войти
+                Ворид шудан
               </Button>
               <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                Регистрация
+                Сабти ном
               </Button>
             </div>
           </div>
@@ -49,12 +49,12 @@ const Index = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
               Умный поиск{' '}
               <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
-                талантов
+                кори
               </span>
             </h1>
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              AI-платформа нового поколения для работодателей и соискателей. 
-              Автоматизированный подбор, скоринг кандидатов и умные рекомендации.
+              AI-платформаи наве барои коргарон ва ҷӯяндагони кор дар Тоҷикистон. 
+              Интихоби автоматикунонӣ, рейтинги номзадҳо ва тавсияҳои зирак.
             </p>
             
             {/* AI Search */}
@@ -63,11 +63,11 @@ const Index = () => {
                 <TabsList className="grid w-full grid-cols-2 mb-6">
                   <TabsTrigger value="jobs" className="flex items-center">
                     <Icon name="Search" className="w-4 h-4 mr-2" />
-                    Найти работу
+                    Кор ёфтан
                   </TabsTrigger>
                   <TabsTrigger value="candidates" className="flex items-center">
                     <Icon name="Users" className="w-4 h-4 mr-2" />
-                    Найти сотрудника
+                    Коргар ёфтан
                   </TabsTrigger>
                 </TabsList>
                 
@@ -75,7 +75,7 @@ const Index = () => {
                   <div className="relative">
                     <Icon name="Sparkles" className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                     <Input
-                      placeholder="Опишите желаемую позицию или навыки..."
+                      placeholder="Мақоми дилхоҳ ё малакаҳоро шарҳ диҳед..."
                       className="pl-12 h-12 text-lg"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
@@ -83,7 +83,7 @@ const Index = () => {
                   </div>
                   <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800">
                     <Icon name="Zap" className="w-5 h-5 mr-2" />
-                    Найти с помощью AI
+                    Бо ёрии AI ёфтан
                   </Button>
                 </TabsContent>
                 
@@ -91,13 +91,13 @@ const Index = () => {
                   <div className="relative">
                     <Icon name="Target" className="absolute left-3 top-3 h-5 w-5 text-emerald-500" />
                     <Input
-                      placeholder="Опишите требования к кандидату..."
+                      placeholder="Талаботи номзадро шарҳ диҳед..."
                       className="pl-12 h-12 text-lg"
                     />
                   </div>
                   <Button size="lg" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800">
                     <Icon name="UserSearch" className="w-5 h-5 mr-2" fallback="Search" />
-                    Поиск кандидатов
+                    Ҷустуҷӯи номзадҳо
                   </Button>
                 </TabsContent>
               </Tabs>
@@ -106,17 +106,258 @@ const Index = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800">15K+</div>
-                <div className="text-sm text-slate-600">Вакансий</div>
+                <div className="text-3xl font-bold text-slate-800">5.2K+</div>
+                <div className="text-sm text-slate-600">Ҷойҳои кор</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800">8K+</div>
-                <div className="text-sm text-slate-600">Компаний</div>
+                <div className="text-3xl font-bold text-slate-800">1.8K+</div>
+                <div className="text-sm text-slate-600">Ширкатҳо</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-slate-800">95%</div>
-                <div className="text-sm text-slate-600">Точность AI</div>
+                <div className="text-sm text-slate-600">Дақиқии AI</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Top Vacancies */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-800 mb-2">
+                Ҷойҳои кори беҳтарин
+              </h2>
+              <p className="text-lg text-slate-600">Вакансияҳо аз ширкатҳои калони Тоҷикистон</p>
+            </div>
+            <Button variant="outline" className="hidden md:block">
+              <Icon name="ArrowRight" className="w-4 h-4 ml-2" />
+              Ҳамаашро дидан
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Top Vacancy 1 */}
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">ТА</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-800">Барномасози Frontend</h3>
+                      <p className="text-sm text-slate-600">Таджик Алюминий</p>
+                    </div>
+                  </div>
+                  <Badge className="bg-green-100 text-green-800">Нав</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-3">
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="MapPin" className="w-4 h-4 mr-2" />
+                    <span>Душанбе</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="DollarSign" className="w-4 h-4 mr-2" />
+                    <span>3,500-5,000 сомонӣ</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="Clock" className="w-4 h-4 mr-2" />
+                    <span>Тамоми рӯз</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    <Badge variant="secondary" className="text-xs">React</Badge>
+                    <Badge variant="secondary" className="text-xs">TypeScript</Badge>
+                    <Badge variant="secondary" className="text-xs">Tailwind</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Top Vacancy 2 */}
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">ОТ</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-800">Муҳосиби молиявӣ</h3>
+                      <p className="text-sm text-slate-600">Ориён Тоҷик</p>
+                    </div>
+                  </div>
+                  <Badge className="bg-yellow-100 text-yellow-800">Зудтарин</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-3">
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="MapPin" className="w-4 h-4 mr-2" />
+                    <span>Душанбе</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="DollarSign" className="w-4 h-4 mr-2" />
+                    <span>2,800-4,200 сомонӣ</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="Clock" className="w-4 h-4 mr-2" />
+                    <span>Тамоми рӯз</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    <Badge variant="secondary" className="text-xs">Excel</Badge>
+                    <Badge variant="secondary" className="text-xs">1С</Badge>
+                    <Badge variant="secondary" className="text-xs">Молия</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Top Vacancy 3 */}
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">ТС</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-800">Менеҷери савдо</h3>
+                      <p className="text-sm text-slate-600">Телеком Саноат</p>
+                    </div>
+                  </div>
+                  <Badge className="bg-blue-100 text-blue-800">Дурӣ</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-3">
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="MapPin" className="w-4 h-4 mr-2" />
+                    <span>Худжанд</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="DollarSign" className="w-4 h-4 mr-2" />
+                    <span>4,000-6,500 сомонӣ</span>
+                  </div>
+                  <div className="flex items-center text-sm text-slate-600">
+                    <Icon name="Clock" className="w-4 h-4 mr-2" />
+                    <span>Эҷодӣ</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    <Badge variant="secondary" className="text-xs">CRM</Badge>
+                    <Badge variant="secondary" className="text-xs">Савдо</Badge>
+                    <Badge variant="secondary" className="text-xs">B2B</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center md:hidden">
+            <Button variant="outline" className="w-full">
+              Ҳамаашро дидан
+              <Icon name="ArrowRight" className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Nearby Jobs by Location */}
+      <div className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">
+              Ҷойҳои кор дар наздикӣ
+            </h2>
+            <p className="text-lg text-slate-600">Вакансияҳо дар шаҳрҳои Тоҷикистон</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Dushanbe Jobs */}
+            <Card className="p-6">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <Icon name="Building2" className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800">Душанбе</h3>
+                  <p className="text-slate-600">Пойтахти Тоҷикистон</p>
+                </div>
+                <div className="ml-auto">
+                  <Badge className="bg-blue-100 text-blue-800">2,847 ҷой</Badge>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Барномасозӣ</span>
+                  <span className="text-sm font-semibold text-slate-800">487 ҷой</span>
+                </div>
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Молия ва банкдорӣ</span>
+                  <span className="text-sm font-semibold text-slate-800">324 ҷой</span>
+                </div>
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Савдо ва маркетинг</span>
+                  <span className="text-sm font-semibold text-slate-800">298 ҷой</span>
+                </div>
+              </div>
+              
+              <Button variant="outline" className="w-full mt-4">
+                Ҳамаи ҷойҳоро дидан
+              </Button>
+            </Card>
+
+            {/* Khujand Jobs */}
+            <Card className="p-6">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                  <Icon name="Factory" className="w-6 h-6 text-emerald-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800">Худжанд</h3>
+                  <p className="text-slate-600">Маркази шимоли Тоҷикистон</p>
+                </div>
+                <div className="ml-auto">
+                  <Badge className="bg-emerald-100 text-emerald-800">1,234 ҷой</Badge>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Саноат ва истеҳсолот</span>
+                  <span className="text-sm font-semibold text-slate-800">312 ҷой</span>
+                </div>
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Логистика</span>
+                  <span className="text-sm font-semibold text-slate-800">198 ҷой</span>
+                </div>
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded-lg">
+                  <span className="text-sm text-slate-700">Хизматрасонӣ</span>
+                  <span className="text-sm font-semibold text-slate-800">156 ҷой</span>
+                </div>
+              </div>
+              
+              <Button variant="outline" className="w-full mt-4">
+                Ҳамаи ҷойҳоро дидан
+              </Button>
+            </Card>
+          </div>
+
+          {/* All cities quick access */}
+          <div className="mt-12 text-center">
+            <p className="text-slate-600 mb-6">Дигар шаҳрҳои Тоҷикистон:</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button variant="outline" size="sm">Бохтар (234 ҷой)</Button>
+              <Button variant="outline" size="sm">Куляб (187 ҷой)</Button>
+              <Button variant="outline" size="sm">Турсунзода (156 ҷой)</Button>
+              <Button variant="outline" size="sm">Исфара (134 ҷой)</Button>
+              <Button variant="outline" size="sm">Истаравшан (98 ҷой)</Button>
+              <Button variant="outline" size="sm">Панҷакент (87 ҷой)</Button>
             </div>
           </div>
         </div>
@@ -127,9 +368,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">
-              Возможности AI-платформы
+              Имкониятҳои AI-платформа
             </h2>
-            <p className="text-xl text-slate-600">Автоматизируем процесс подбора персонала</p>
+            <p className="text-xl text-slate-600">Раванди интихоби кадрҳоро автоматикунонӣ мекунем</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -142,7 +383,7 @@ const Index = () => {
                 <CardTitle className="text-lg">AI Резюме</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-slate-600">Создание резюме с помощью ИИ за 5 минут</p>
+                <p className="text-sm text-slate-600">Сохтани резюме бо ёрии AI дар 5 дақиқа</p>
               </CardContent>
             </Card>
 
@@ -152,10 +393,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Icon name="Target" className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-lg">Умный подбор</CardTitle>
+                <CardTitle className="text-lg">Интихоби зирак</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-slate-600">AI анализирует совместимость кандидата и вакансии</p>
+                <p className="text-sm text-slate-600">AI мувофиқатии номзад ва ҷойи корро таҳлил мекунад</p>
               </CardContent>
             </Card>
 
@@ -165,10 +406,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Icon name="BarChart" className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-lg">Скоринг</CardTitle>
+                <CardTitle className="text-lg">Рейтинг</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-slate-600">Оценка кандидатов по 50+ параметрам</p>
+                <p className="text-sm text-slate-600">Арзёбии номзадҳо аз рӯи 50+ параметр</p>
               </CardContent>
             </Card>
 
@@ -181,7 +422,7 @@ const Index = () => {
                 <CardTitle className="text-lg">Чат-бот</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-slate-600">Автоматизированное общение с кандидатами</p>
+                <p className="text-sm text-slate-600">Муошират бо номзадҳои автоматикунонӣ</p>
               </CardContent>
             </Card>
           </div>
@@ -193,9 +434,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">
-              AI-скоринг кандидатов
+              AI-рейтинги номзадҳо
             </h2>
-            <p className="text-xl text-slate-600">Пример анализа профиля разработчика</p>
+            <p className="text-xl text-slate-600">Мисоли таҳлили профили барномасоз</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -206,18 +447,18 @@ const Index = () => {
                     <span className="text-white font-bold">АИ</span>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-slate-800">Алексей Петров</h3>
-                    <p className="text-slate-600">Senior Frontend Developer</p>
+                    <h3 className="text-xl font-semibold text-slate-800">Алишер Раҳимов</h3>
+                    <p className="text-slate-600">Барномасози калон</p>
                   </div>
                   <div className="ml-auto">
-                    <Badge className="bg-green-100 text-green-800">92% соответствие</Badge>
+                    <Badge className="bg-green-100 text-green-800">92% мувофиқат</Badge>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Технические навыки</span>
+                      <span className="text-sm font-medium text-slate-700">Малакаҳои техникӣ</span>
                       <span className="text-sm text-slate-600">95%</span>
                     </div>
                     <Progress value={95} className="h-2" />
@@ -225,7 +466,7 @@ const Index = () => {
 
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Опыт работы</span>
+                      <span className="text-sm font-medium text-slate-700">Таҷрибаи корӣ</span>
                       <span className="text-sm text-slate-600">88%</span>
                     </div>
                     <Progress value={88} className="h-2" />
@@ -233,7 +474,7 @@ const Index = () => {
 
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Образование</span>
+                      <span className="text-sm font-medium text-slate-700">Маориф</span>
                       <span className="text-sm text-slate-600">92%</span>
                     </div>
                     <Progress value={92} className="h-2" />
@@ -241,7 +482,7 @@ const Index = () => {
 
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Локация</span>
+                      <span className="text-sm font-medium text-slate-700">Ҷойгиршавӣ</span>
                       <span className="text-sm text-slate-600">100%</span>
                     </div>
                     <Progress value={100} className="h-2" />
@@ -249,12 +490,12 @@ const Index = () => {
                 </div>
 
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-2">Ключевые преимущества:</h4>
+                  <h4 className="text-sm font-semibold text-blue-900 mb-2">Бартариҳои асосӣ:</h4>
                   <ul className="text-sm text-blue-800 space-y-1">
-                    <li>• 5+ лет опыта с React и TypeScript</li>
-                    <li>• Опыт в финтех стартапах</li>
-                    <li>• Готов к релокации</li>
-                    <li>• Активен на GitHub</li>
+                    <li>• 5+ сол таҷриба бо React ва TypeScript</li>
+                    <li>• Таҷриба дар финтех стартапҳо</li>
+                    <li>• Омода ба кӯчидан</li>
+                    <li>• Фаъол дар GitHub</li>
                   </ul>
                 </div>
               </Card>
@@ -264,16 +505,16 @@ const Index = () => {
               <Card className="p-6">
                 <div className="flex items-center mb-4">
                   <Icon name="TrendingUp" className="w-8 h-8 text-green-600 mr-3" />
-                  <h3 className="text-lg font-semibold text-slate-800">Аналитика подбора</h3>
+                  <h3 className="text-lg font-semibold text-slate-800">Таҳлили интихоб</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">847</div>
-                    <div className="text-sm text-green-800">Подходящих резюме</div>
+                    <div className="text-2xl font-bold text-green-600">347</div>
+                    <div className="text-sm text-green-800">Резюмеи мувофиқ</div>
                   </div>
                   <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">43</div>
-                    <div className="text-sm text-blue-800">Топ кандидатов</div>
+                    <div className="text-2xl font-bold text-blue-600">28</div>
+                    <div className="text-sm text-blue-800">Номзадҳои беҳтарин</div>
                   </div>
                 </div>
               </Card>
@@ -281,20 +522,20 @@ const Index = () => {
               <Card className="p-6">
                 <div className="flex items-center mb-4">
                   <Icon name="Clock" className="w-8 h-8 text-purple-600 mr-3" />
-                  <h3 className="text-lg font-semibold text-slate-800">Экономия времени</h3>
+                  <h3 className="text-lg font-semibold text-slate-800">Сарфаи вақт</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-slate-700">Ручной отбор</span>
-                    <span className="font-semibold text-slate-800">~8 часов</span>
+                    <span className="text-slate-700">Интихоби дастӣ</span>
+                    <span className="font-semibold text-slate-800">~8 соат</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-700">С AI JobHub</span>
-                    <span className="font-semibold text-green-600">~15 минут</span>
+                    <span className="text-slate-700">Бо AI Кор</span>
+                    <span className="font-semibold text-green-600">~15 дақиқа</span>
                   </div>
                   <div className="pt-2 border-t">
                     <div className="flex justify-between">
-                      <span className="font-semibold text-slate-800">Экономия</span>
+                      <span className="font-semibold text-slate-800">Сарфакардӣ</span>
                       <span className="font-bold text-emerald-600">97%</span>
                     </div>
                   </div>
@@ -309,8 +550,8 @@ const Index = () => {
       <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Тарифные планы</h2>
-            <p className="text-xl text-slate-600">Выберите подходящий план для вашего бизнеса</p>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Тарифҳои хизматрасонӣ</h2>
+            <p className="text-xl text-slate-600">Тарифи мувофиқро барои тиҷорати худ интихоб кунед</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -320,35 +561,35 @@ const Index = () => {
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Zap" className="w-8 h-8 text-slate-600" />
                 </div>
-                <CardTitle className="text-2xl">Базовый</CardTitle>
+                <CardTitle className="text-2xl">Асосӣ</CardTitle>
                 <div className="text-4xl font-bold text-slate-800 mt-4">
-                  Бесплатно
+                  Ройгон
                 </div>
                 <CardDescription className="mt-2">
-                  Для знакомства с платформой
+                  Барои шинос шудан бо платформа
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>5 поисков в месяц</span>
+                    <span>5 ҷустуҷӯ дар моҳ</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Базовый AI-помощник</span>
+                    <span>AI-ёвари асосӣ</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Создание резюме</span>
+                    <span>Сохтани резюме</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="X" className="w-5 h-5 text-slate-400 mr-3" />
-                    <span className="text-slate-400">Скоринг кандидатов</span>
+                    <span className="text-slate-400">Рейтинги номзадҳо</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full">
-                  Начать бесплатно
+                  Ройгон оғоз кунед
                 </Button>
               </CardContent>
             </Card>
@@ -364,38 +605,38 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">Премиум</CardTitle>
                 <div className="text-4xl font-bold text-slate-800 mt-4">
-                  ₽2,990
-                  <span className="text-base font-normal text-slate-600">/мес</span>
+                  320 сомонӣ
+                  <span className="text-base font-normal text-slate-600">/моҳ</span>
                 </div>
                 <CardDescription className="mt-2">
-                  Для активного поиска персонала
+                  Барои ҷустуҷӯи фаъоли кадрҳо
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>100 поисков в месяц</span>
+                    <span>100 ҷустуҷӯ дар моҳ</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Продвинутый AI-помощник</span>
+                    <span>AI-ёвари пешрафта</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>AI-скоринг кандидатов</span>
+                    <span>AI-рейтинги номзадҳо</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Чат-бот для HR</span>
+                    <span>Чат-бот барои HR</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Аналитика и отчеты</span>
+                    <span>Таҳлил ва ҳисоботҳо</span>
                   </li>
                 </ul>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Выбрать премиум
+                  Премиум интихоб кунед
                 </Button>
               </CardContent>
             </Card>
@@ -406,40 +647,40 @@ const Index = () => {
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Building" className="w-8 h-8 text-emerald-600" />
                 </div>
-                <CardTitle className="text-2xl">Бизнес</CardTitle>
+                <CardTitle className="text-2xl">Тиҷорӣ</CardTitle>
                 <div className="text-4xl font-bold text-slate-800 mt-4">
-                  ₽9,990
-                  <span className="text-base font-normal text-slate-600">/мес</span>
+                  1,050 сомонӣ
+                  <span className="text-base font-normal text-slate-600">/моҳ</span>
                 </div>
                 <CardDescription className="mt-2">
-                  Для крупных HR-отделов
+                  Барои шуъбаҳои калони HR
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Безлимитные поиски</span>
+                    <span>Ҷустуҷӯи номаҳдуд</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Корпоративный AI</span>
+                    <span>AI-и корпоративӣ</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Интеграции с CRM</span>
+                    <span>Пайвастшавӣ бо CRM</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Персональный менеджер</span>
+                    <span>Менеҷери шахсӣ</span>
                   </li>
                   <li className="flex items-center">
                     <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>API доступ</span>
+                    <span>Дастрасии API</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                  Связаться с нами
+                  Бо мо тамос гиред
                 </Button>
               </CardContent>
             </Card>
@@ -454,10 +695,10 @@ const Index = () => {
             <div>
               <div className="flex items-center mb-4">
                 <Icon name="Brain" className="h-8 w-8 text-blue-400 mr-2" />
-                <span className="font-bold text-xl">AI JobHub</span>
+                <span className="font-bold text-xl">AI Кор</span>
               </div>
               <p className="text-slate-400 mb-4">
-                Революция в подборе персонала с помощью искусственного интеллекта
+                Инқилоб дар интихоби кадрҳо бо ёрии зеҳни сунъӣ
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
@@ -470,38 +711,38 @@ const Index = () => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Продукт</h3>
+              <h3 className="font-semibold mb-4">Маҳсулот</h3>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">Поиск вакансий</a></li>
-                <li><a href="#" className="hover:text-white">Поиск кандидатов</a></li>
+                <li><a href="#" className="hover:text-white">Ҷустуҷӯи ҷойҳои кор</a></li>
+                <li><a href="#" className="hover:text-white">Ҷустуҷӯи номзадҳо</a></li>
                 <li><a href="#" className="hover:text-white">AI-резюме</a></li>
-                <li><a href="#" className="hover:text-white">Аналитика</a></li>
+                <li><a href="#" className="hover:text-white">Таҳлил</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Компания</h3>
+              <h3 className="font-semibold mb-4">Ширкат</h3>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">О нас</a></li>
+                <li><a href="#" className="hover:text-white">Дар бораи мо</a></li>
                 <li><a href="#" className="hover:text-white">Блог</a></li>
-                <li><a href="#" className="hover:text-white">Карьера</a></li>
-                <li><a href="#" className="hover:text-white">Контакты</a></li>
+                <li><a href="#" className="hover:text-white">Мансабҳо</a></li>
+                <li><a href="#" className="hover:text-white">Тамосҳо</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Поддержка</h3>
+              <h3 className="font-semibold mb-4">Дастгирӣ</h3>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">Документация</a></li>
-                <li><a href="#" className="hover:text-white">Справочный центр</a></li>
+                <li><a href="#" className="hover:text-white">Ҳуҷҷатсозӣ</a></li>
+                <li><a href="#" className="hover:text-white">Маркази кӯмак</a></li>
                 <li><a href="#" className="hover:text-white">API</a></li>
-                <li><a href="#" className="hover:text-white">Статус системы</a></li>
+                <li><a href="#" className="hover:text-white">Ҳолати низом</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 AI JobHub. Все права защищены.</p>
+            <p>&copy; 2024 AI Кор. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
           </div>
         </div>
       </footer>
