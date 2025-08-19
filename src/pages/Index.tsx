@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from '@/components/ui/icon';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const { t } = useLanguage();
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -19,22 +21,22 @@ const Index = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Icon name="Brain" className="h-8 w-8 text-blue-600 mr-2" />
-                <span className="font-bold text-xl text-slate-800">AI Кор</span>
+                <span className="font-bold text-xl text-slate-800">{t({ru: 'AI JobHub', tg: 'AI Кор'})}</span>
               </div>
               <div className="hidden md:ml-8 md:flex md:space-x-8">
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ҷойҳои кор</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Резюме</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Ширкатҳо</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Таҳлил</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Санҷишҳо</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Вакансии', tg: 'Ҷойҳои кор'})}</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Резюме', tg: 'Резюме'})}</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Компании', tg: 'Ширкатҳо'})}</a>
+                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Аналитика', tg: 'Таҳлил'})}</a>
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
               <Button variant="outline" size="sm">
-                Ворид шудан
+                {t({ru: 'Войти', tg: 'Ворид шудан'})}
               </Button>
               <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                Сабти ном
+                {t({ru: 'Регистрация', tg: 'Сабти ном'})}
               </Button>
             </div>
           </div>
@@ -63,11 +65,11 @@ const Index = () => {
                 <TabsList className="grid w-full grid-cols-2 mb-6">
                   <TabsTrigger value="jobs" className="flex items-center">
                     <Icon name="Search" className="w-4 h-4 mr-2" />
-                    Кор ёфтан
+                    {t({ru: 'Найти работу', tg: 'Кор ёфтан'})}
                   </TabsTrigger>
                   <TabsTrigger value="candidates" className="flex items-center">
                     <Icon name="Users" className="w-4 h-4 mr-2" />
-                    Коргар ёфтан
+                    {t({ru: 'Найти сотрудника', tg: 'Коргар ёфтан'})}
                   </TabsTrigger>
                 </TabsList>
                 
@@ -75,7 +77,7 @@ const Index = () => {
                   <div className="relative">
                     <Icon name="Sparkles" className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                     <Input
-                      placeholder="Мақоми дилхоҳ ё малакаҳоро шарҳ диҳед..."
+                      placeholder={t({ru: 'Опишите желаемую позицию или навыки...', tg: 'Мақоми дилхоҳ ё малакаҳоро шарҳ диҳед...'})}
                       className="pl-12 h-12 text-lg"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
@@ -83,7 +85,7 @@ const Index = () => {
                   </div>
                   <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800">
                     <Icon name="Zap" className="w-5 h-5 mr-2" />
-                    Бо ёрии AI ёфтан
+                    {t({ru: 'Найти с помощью AI', tg: 'Бо ёрии AI ёфтан'})}
                   </Button>
                 </TabsContent>
                 
@@ -91,13 +93,13 @@ const Index = () => {
                   <div className="relative">
                     <Icon name="Target" className="absolute left-3 top-3 h-5 w-5 text-emerald-500" />
                     <Input
-                      placeholder="Талаботи номзадро шарҳ диҳед..."
+                      placeholder={t({ru: 'Опишите требования к кандидату...', tg: 'Талаботи номзадро шарҳ диҳед...'})}
                       className="pl-12 h-12 text-lg"
                     />
                   </div>
                   <Button size="lg" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800">
                     <Icon name="UserSearch" className="w-5 h-5 mr-2" fallback="Search" />
-                    Ҷустуҷӯи номзадҳо
+                    {t({ru: 'Поиск кандидатов', tg: 'Ҷустуҷӯи номзадҳо'})}
                   </Button>
                 </TabsContent>
               </Tabs>
@@ -362,390 +364,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* AI Features */}
-      <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
-              Имкониятҳои AI-платформа
-            </h2>
-            <p className="text-xl text-slate-600">Раванди интихоби кадрҳоро автоматикунонӣ мекунем</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* AI Resume Builder */}
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="FileText" className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg">AI Резюме</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-slate-600">Сохтани резюме бо ёрии AI дар 5 дақиқа</p>
-              </CardContent>
-            </Card>
-
-            {/* Smart Matching */}
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="Target" className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg">Интихоби зирак</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-slate-600">AI мувофиқатии номзад ва ҷойи корро таҳлил мекунад</p>
-              </CardContent>
-            </Card>
-
-            {/* Candidate Scoring */}
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="BarChart" className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg">Рейтинг</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-slate-600">Арзёбии номзадҳо аз рӯи 50+ параметр</p>
-              </CardContent>
-            </Card>
-
-            {/* Chatbot */}
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="MessageSquare" className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg">Чат-бот</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-slate-600">Муошират бо номзадҳои автоматикунонӣ</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      {/* Candidate Scoring Demo */}
-      <div className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
-              AI-рейтинги номзадҳо
-            </h2>
-            <p className="text-xl text-slate-600">Мисоли таҳлили профили барномасоз</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Card className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">АИ</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-slate-800">Алишер Раҳимов</h3>
-                    <p className="text-slate-600">Барномасози калон</p>
-                  </div>
-                  <div className="ml-auto">
-                    <Badge className="bg-green-100 text-green-800">92% мувофиқат</Badge>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Малакаҳои техникӣ</span>
-                      <span className="text-sm text-slate-600">95%</span>
-                    </div>
-                    <Progress value={95} className="h-2" />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Таҷрибаи корӣ</span>
-                      <span className="text-sm text-slate-600">88%</span>
-                    </div>
-                    <Progress value={88} className="h-2" />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Маориф</span>
-                      <span className="text-sm text-slate-600">92%</span>
-                    </div>
-                    <Progress value={92} className="h-2" />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700">Ҷойгиршавӣ</span>
-                      <span className="text-sm text-slate-600">100%</span>
-                    </div>
-                    <Progress value={100} className="h-2" />
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-2">Бартариҳои асосӣ:</h4>
-                  <ul className="text-sm text-blue-800 space-y-1">
-                    <li>• 5+ сол таҷриба бо React ва TypeScript</li>
-                    <li>• Таҷриба дар финтех стартапҳо</li>
-                    <li>• Омода ба кӯчидан</li>
-                    <li>• Фаъол дар GitHub</li>
-                  </ul>
-                </div>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <Icon name="TrendingUp" className="w-8 h-8 text-green-600 mr-3" />
-                  <h3 className="text-lg font-semibold text-slate-800">Таҳлили интихоб</h3>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">347</div>
-                    <div className="text-sm text-green-800">Резюмеи мувофиқ</div>
-                  </div>
-                  <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">28</div>
-                    <div className="text-sm text-blue-800">Номзадҳои беҳтарин</div>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <Icon name="Clock" className="w-8 h-8 text-purple-600 mr-3" />
-                  <h3 className="text-lg font-semibold text-slate-800">Сарфаи вақт</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-slate-700">Интихоби дастӣ</span>
-                    <span className="font-semibold text-slate-800">~8 соат</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-700">Бо AI Кор</span>
-                    <span className="font-semibold text-green-600">~15 дақиқа</span>
-                  </div>
-                  <div className="pt-2 border-t">
-                    <div className="flex justify-between">
-                      <span className="font-semibold text-slate-800">Сарфакардӣ</span>
-                      <span className="font-bold text-emerald-600">97%</span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Pricing */}
-      <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Тарифҳои хизматрасонӣ</h2>
-            <p className="text-xl text-slate-600">Тарифи мувофиқро барои тиҷорати худ интихоб кунед</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Free Plan */}
-            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow">
-              <CardHeader className="text-center pb-8">
-                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Zap" className="w-8 h-8 text-slate-600" />
-                </div>
-                <CardTitle className="text-2xl">Асосӣ</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">
-                  Ройгон
-                </div>
-                <CardDescription className="mt-2">
-                  Барои шинос шудан бо платформа
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>5 ҷустуҷӯ дар моҳ</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>AI-ёвари асосӣ</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Сохтани резюме</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="X" className="w-5 h-5 text-slate-400 mr-3" />
-                    <span className="text-slate-400">Рейтинги номзадҳо</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full">
-                  Ройгон оғоз кунед
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Premium Plan */}
-            <Card className="relative overflow-hidden border-2 border-blue-500 hover:shadow-xl transition-shadow">
-              <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center py-2 text-sm font-medium">
-                Рекомендуем
-              </div>
-              <CardHeader className="text-center pb-8 pt-12">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Sparkles" className="w-8 h-8 text-blue-600" />
-                </div>
-                <CardTitle className="text-2xl">Премиум</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">
-                  320 сомонӣ
-                  <span className="text-base font-normal text-slate-600">/моҳ</span>
-                </div>
-                <CardDescription className="mt-2">
-                  Барои ҷустуҷӯи фаъоли кадрҳо
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>100 ҷустуҷӯ дар моҳ</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>AI-ёвари пешрафта</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>AI-рейтинги номзадҳо</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Чат-бот барои HR</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Таҳлил ва ҳисоботҳо</span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Премиум интихоб кунед
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Business Plan */}
-            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow">
-              <CardHeader className="text-center pb-8">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Building" className="w-8 h-8 text-emerald-600" />
-                </div>
-                <CardTitle className="text-2xl">Тиҷорӣ</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">
-                  1,050 сомонӣ
-                  <span className="text-base font-normal text-slate-600">/моҳ</span>
-                </div>
-                <CardDescription className="mt-2">
-                  Барои шуъбаҳои калони HR
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Ҷустуҷӯи номаҳдуд</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>AI-и корпоративӣ</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Пайвастшавӣ бо CRM</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Менеҷери шахсӣ</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Icon name="Check" className="w-5 h-5 text-green-600 mr-3" />
-                    <span>Дастрасии API</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                  Бо мо тамос гиред
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <Icon name="Brain" className="h-8 w-8 text-blue-400 mr-2" />
-                <span className="font-bold text-xl">AI Кор</span>
-              </div>
-              <p className="text-slate-400 mb-4">
-                Инқилоб дар интихоби кадрҳо бо ёрии зеҳни сунъӣ
-              </p>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
-                  <Icon name="Mail" className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
-                  <Icon name="Phone" className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Маҳсулот</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">Ҷустуҷӯи ҷойҳои кор</a></li>
-                <li><a href="#" className="hover:text-white">Ҷустуҷӯи номзадҳо</a></li>
-                <li><a href="#" className="hover:text-white">AI-резюме</a></li>
-                <li><a href="#" className="hover:text-white">Таҳлил</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Ширкат</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">Дар бораи мо</a></li>
-                <li><a href="#" className="hover:text-white">Блог</a></li>
-                <li><a href="#" className="hover:text-white">Мансабҳо</a></li>
-                <li><a href="#" className="hover:text-white">Тамосҳо</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Дастгирӣ</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white">Ҳуҷҷатсозӣ</a></li>
-                <li><a href="#" className="hover:text-white">Маркази кӯмак</a></li>
-                <li><a href="#" className="hover:text-white">API</a></li>
-                <li><a href="#" className="hover:text-white">Ҳолати низом</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 AI Кор. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
