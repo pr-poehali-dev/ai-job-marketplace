@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -21,21 +23,21 @@ const Index = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Icon name="Brain" className="h-8 w-8 text-blue-600 mr-2" />
-                <span className="font-bold text-xl text-slate-800">{t({ru: 'AI JobHub', tg: 'AI Кор'})}</span>
+                <button onClick={() => navigate('/')} className="font-bold text-xl text-slate-800">{t({ru: 'AI JobHub', tg: 'AI Кор'})}</button>
               </div>
               <div className="hidden md:ml-8 md:flex md:space-x-8">
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Вакансии', tg: 'Ҷойҳои кор'})}</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Резюме', tg: 'Резюме'})}</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Компании', tg: 'Ширкатҳо'})}</a>
-                <a href="#" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Аналитика', tg: 'Таҳлил'})}</a>
+                <button onClick={() => navigate('/jobs')} className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Вакансии', tg: 'Ҷойҳои кор'})}</button>
+                <button onClick={() => navigate('/resumes')} className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Резюме', tg: 'Резюме'})}</button>
+                <button onClick={() => navigate('/companies')} className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Компании', tg: 'Ширкатҳо'})}</button>
+                <button onClick={() => navigate('/analytics')} className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">{t({ru: 'Аналитика', tg: 'Таҳлил'})}</button>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <LanguageSwitcher />
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => navigate('/login')}>
                 {t({ru: 'Войти', tg: 'Ворид шудан'})}
               </Button>
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700" onClick={() => navigate('/register')}>
                 {t({ru: 'Регистрация', tg: 'Сабти ном'})}
               </Button>
             </div>
@@ -83,7 +85,7 @@ const Index = () => {
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
                   </div>
-                  <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800" onClick={() => navigate(`/jobs?search=${encodeURIComponent(searchQuery)}`)}>
                     <Icon name="Zap" className="w-5 h-5 mr-2" />
                     {t({ru: 'Найти с помощью AI', tg: 'Бо ёрии AI ёфтан'})}
                   </Button>
@@ -97,7 +99,7 @@ const Index = () => {
                       className="pl-12 h-12 text-lg"
                     />
                   </div>
-                  <Button size="lg" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800" onClick={() => navigate('/candidates')}>
                     <Icon name="UserSearch" className="w-5 h-5 mr-2" fallback="Search" />
                     {t({ru: 'Поиск кандидатов', tg: 'Ҷустуҷӯи номзадҳо'})}
                   </Button>
@@ -134,7 +136,7 @@ const Index = () => {
               </h2>
               <p className="text-lg text-slate-600">Вакансияҳо аз ширкатҳои калони Тоҷикистон</p>
             </div>
-            <Button variant="outline" className="hidden md:block">
+            <Button variant="outline" className="hidden md:block" onClick={() => navigate('/jobs')}>
               <Icon name="ArrowRight" className="w-4 h-4 ml-2" />
               Ҳамаашро дидан
             </Button>
@@ -142,7 +144,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {/* Top Vacancy 1 */}
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/job/1')}>
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center">
@@ -181,7 +183,7 @@ const Index = () => {
             </Card>
 
             {/* Top Vacancy 2 */}
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/job/2')}>
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center">
@@ -220,7 +222,7 @@ const Index = () => {
             </Card>
 
             {/* Top Vacancy 3 */}
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/job/3')}>
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center">
@@ -260,7 +262,7 @@ const Index = () => {
           </div>
 
           <div className="text-center md:hidden">
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full" onClick={() => navigate('/jobs')}>
               Ҳамаашро дидан
               <Icon name="ArrowRight" className="w-4 h-4 ml-2" />
             </Button>
@@ -309,7 +311,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="outline" className="w-full mt-4">
+              <Button variant="outline" className="w-full mt-4" onClick={() => navigate('/jobs?location=dushanbe')}>
                 Ҳамаи ҷойҳоро дидан
               </Button>
             </Card>
@@ -344,7 +346,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="outline" className="w-full mt-4">
+              <Button variant="outline" className="w-full mt-4" onClick={() => navigate('/jobs?location=khujand')}>
                 Ҳамаи ҷойҳоро дидан
               </Button>
             </Card>
@@ -354,12 +356,12 @@ const Index = () => {
           <div className="mt-12 text-center">
             <p className="text-slate-600 mb-6">Дигар шаҳрҳои Тоҷикистон:</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button variant="outline" size="sm">Бохтар (234 ҷой)</Button>
-              <Button variant="outline" size="sm">Куляб (187 ҷой)</Button>
-              <Button variant="outline" size="sm">Турсунзода (156 ҷой)</Button>
-              <Button variant="outline" size="sm">Исфара (134 ҷой)</Button>
-              <Button variant="outline" size="sm">Истаравшан (98 ҷой)</Button>
-              <Button variant="outline" size="sm">Панҷакент (87 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=bokhtar')}>Бохтар (234 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=kulob')}>Куляб (187 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=tursunzoda')}>Турсунзода (156 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=isfara')}>Исфара (134 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=istaravshan')}>Истаравшан (98 ҷой)</Button>
+              <Button variant="outline" size="sm" onClick={() => navigate('/jobs?location=panjak')}>Панҷакент (87 ҷой)</Button>
             </div>
           </div>
         </div>
